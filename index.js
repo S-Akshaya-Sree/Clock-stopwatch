@@ -6,13 +6,13 @@ function switchTab(tab, btn) {
   }
 
   const timeSlots = [
-    { range:[5,7],   cls:'dawn',      greeting:'Good dawn! 🌅' },
-    { range:[7,12],  cls:'morning',   greeting:'Good morning! ☀️' },
-    { range:[12,15], cls:'noon',      greeting:'Good afternoon! 🌤️' },
-    { range:[15,18], cls:'afternoon', greeting:'Good afternoon! 🌇' },
-    { range:[18,21], cls:'evening',   greeting:'Good evening! 🌆' },
-    { range:[21,24], cls:'night',     greeting:'Good night! 🌙' },
-    { range:[0,5],   cls:'night',     greeting:'Good night! 🌙' },
+    { range:[5,7],   cls:'dawn',      greeting:'Good dawn!' },
+    { range:[7,12],  cls:'morning',   greeting:'Good morning!' },
+    { range:[12,15], cls:'noon',      greeting:'Good afternoon!' },
+    { range:[15,18], cls:'afternoon', greeting:'Good afternoon!' },
+    { range:[18,21], cls:'evening',   greeting:'Good evening!' },
+    { range:[21,24], cls:'night',     greeting:'Good night!' },
+    { range:[0,5],   cls:'night',     greeting:'Good night!' },
   ];
 
   let currentCls = '';
