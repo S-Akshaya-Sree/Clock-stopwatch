@@ -1,22 +1,22 @@
-# ⏱️ Digital Clock & Stopwatch
+# Digital Clock & Stopwatch
 
 A lightweight, single-file web application that combines a real-time **Digital Clock** and a precision **Stopwatch** into one unified interface — featuring a fully dynamic, time-aware background that automatically adapts its visual theme based on the current hour of the day.
 
 ---
 
-## 📸 Preview
+## Preview
 
-### 🕒 Clock
+### Clock
 <img width="1893" height="1016" alt="Clock Preview" src="https://github.com/user-attachments/assets/580ad9a7-73fc-461b-8040-bab7d7882d85" />
 
-### ⏱️ Stopwatch
+### Stopwatch
 <img width="1917" height="1010" alt="Stopwatch Preview" src="https://github.com/user-attachments/assets/a63f8f62-4231-4f3a-9720-9d977426c7cb" />
 
 > Background and celestial elements change automatically based on your local system time — no configuration required.
 
 ---
 
-## 🌅 Time-Based Themes
+## Time-Based Themes
 
 | Time of Day | Theme Description |
 |------------|-----------------|
@@ -29,22 +29,22 @@ A lightweight, single-file web application that combines a real-time **Digital C
 
 ---
 
-## 🚀 Features
+## Features
 
-### 🕒 Digital Clock
+### Digital Clock
 - Displays current local time in **12-hour format** (`HH:MM:SS AM/PM`)
 - Live date display — full day name, month, date, and year
 - AM/PM indicator rendered as a separate DOM element beneath the time
 - Updates every `1000ms` using `setInterval()`
 - Powered by the JavaScript `Date` API
 
-### ⏱️ Stopwatch
+### Stopwatch
 - Displays elapsed time in `HH:MM:SS:ms`
 - Updates every `10ms` (centisecond precision)
 - Controls: **START**, **STOP**, **RESET**
 - Uses `Date.now()` delta calculation (drift-resistant)
 
-### 🌌 Dynamic Background System
+### Dynamic Background System
 - Six CSS gradient themes applied via `document.body.className`
 - Celestial body (`#celestial`) using:
   - `border-radius: 50%`
@@ -58,7 +58,7 @@ A lightweight, single-file web application that combines a real-time **Digital C
   - `transition: background 2s ease`
   - `transition: all 2s ease`
 
-### 🔀 Tab-Based Navigation
+### Tab-Based Navigation
 - Two-panel layout (Clock / Stopwatch)
 - Controlled via `classList.add/remove('active')`
 - No frameworks or routing libraries used
@@ -66,7 +66,7 @@ A lightweight, single-file web application that combines a real-time **Digital C
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 project/
