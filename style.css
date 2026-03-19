@@ -1,0 +1,161 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: Garamond, sans-serif;
+      transition: background 2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    body.dawn      { background: linear-gradient(to bottom, #1a0533, #c2623f, #f5a55a); }
+    body.morning   { background: linear-gradient(to bottom, #87ceeb, #ffe066, #fff8dc); }
+    body.noon      { background: linear-gradient(to bottom, #1e90ff, #87ceeb, #e0f7ff); }
+    body.afternoon { background: linear-gradient(to bottom, #f7971e, #ffd200, #ffe57a); }
+    body.evening   { background: linear-gradient(to bottom, #0f2027, #e05c2a, #f5a55a); }
+    body.night     { background: linear-gradient(to bottom, #0a0015, #0d1b4b, #1a2a6c); }
+
+    #celestial {
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      transition: all 2s ease;
+      z-index: 0;
+    }
+    body.dawn      #celestial { width:80px;  height:80px;  background:radial-gradient(circle,#ffdd99,#ff8800); box-shadow:0 0 40px 20px rgba(255,150,50,0.5);  bottom:10%; left:50%; transform:translateX(-50%); top:auto; right:auto; }
+    body.morning   #celestial { width:90px;  height:90px;  background:radial-gradient(circle,#fff7aa,#ffe033); box-shadow:0 0 50px 25px rgba(255,220,50,0.5);  bottom:32%; left:28%;  top:auto; right:auto; transform:none; }
+    body.noon      #celestial { width:100px; height:100px; background:radial-gradient(circle,#ffffff,#fffde0); box-shadow:0 0 60px 30px rgba(255,255,200,0.7); top:8%;    left:50%; transform:translateX(-50%); bottom:auto; right:auto; }
+    body.afternoon #celestial { width:90px;  height:90px;  background:radial-gradient(circle,#ffd966,#ff9900); box-shadow:0 0 50px 25px rgba(255,180,50,0.5);  bottom:32%; right:20%; top:auto; left:auto; transform:none; }
+    body.evening   #celestial { width:80px;  height:80px;  background:radial-gradient(circle,#ffcc88,#ff5500); box-shadow:0 0 40px 20px rgba(255,100,30,0.6);  bottom:8%;  right:25%; top:auto; left:auto; transform:none; }
+    body.night     #celestial { width:70px;  height:70px;  background:radial-gradient(circle,#ffffff,#ddeeff); box-shadow:0 0 30px 15px rgba(200,220,255,0.4); top:12%;   right:18%; bottom:auto; left:auto; transform:none; }
+
+    #stars {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0;
+      transition: opacity 2s ease;
+    }
+    body.night #stars, body.evening #stars { opacity: 1; }
+
+    .tabs {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      gap: 6px;
+      background: rgba(0,0,0,0.25);
+      border-radius: 12px;
+      padding: 5px;
+      backdrop-filter: blur(6px);
+    }
+
+    .tab-btn {
+      font-family: Garamond, sans-serif;
+      font-size: 1.1rem;
+      padding: 8px 28px;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      background: transparent;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .tab-btn.active {
+      background: rgba(255,255,255,0.25);
+      border-color: rgba(255,255,255,0.7);
+    }
+
+    .panel {
+      position: relative;
+      z-index: 1;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      border: 2px solid black;
+      border-radius: 50px;
+      padding: 30px 50px;
+      backdrop-filter: blur(5px);
+      background: rgba(255,255,255,0.08);
+      animation: fadeIn 0.3s ease;
+    }
+    .panel.active { display: flex; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+
+    #greeting {
+      font-size: 1.15rem;
+      color: white;
+      text-shadow: 1px 1px 3px black;
+      letter-spacing: 0.05em;
+    }
+
+    #myh1-clock {
+      font-size: 4em;
+      font-family: Garamond, sans-serif;
+      color: white;
+      text-shadow: 3px 3px 3px black;
+      margin-bottom: 10px;
+    }
+
+    #clock-display {
+      font-size: 5em;
+      font-family: monospace, sans-serif;
+      color: white;
+      text-shadow: 2px 2px 2px black;
+    }
+
+    #clock-meridiem {
+      font-size: 1.8rem;
+      color: white;
+      text-shadow: 1px 1px 3px black;
+      align-self: flex-end;
+      margin-top: -6px;
+    }
+
+    #clock-date {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.9);
+      text-shadow: 1px 1px 2px black;
+      margin-top: 6px;
+    }
+    #myh1-sw {
+      font-size: 4em;
+      font-family: Garamond, sans-serif;
+      color: white;
+      text-shadow: 3px 3px 3px black;
+      margin-bottom: 10px;
+    }
+
+    #sw-display {
+      font-size: 5em;
+      font-family: monospace, sans-serif;
+      color: white;
+      text-shadow: 2px 2px 2px rgb(255,255,255);
+      margin-bottom: 20px;
+    }
+
+    #controls button {
+      font-size: 1.5rem;
+      padding: 10px 20px;
+      margin: 5px;
+      min-width: 125px;
+      border: 2px solid;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.5s ease;
+    }
+    #startbtn { background-color: rgb(5,90,5); color: white; }
+    #startbtn:hover { background-color: green; }
+    #stopbtn  { background-color: rgb(157,2,2); color: white; }
+    #stopbtn:hover  { background-color: red; }
+    #resetbtn { background-color: rgba(0,0,255,0.824); color: white; }
+    #resetbtn:hover { background-color: rgb(5,125,181); }
