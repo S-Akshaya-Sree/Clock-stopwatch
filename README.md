@@ -7,10 +7,12 @@ A lightweight, single-file web application that combines a real-time **Digital C
 ## Preview
 
 ### Clock
-<img width="1893" height="1016" alt="Clock Preview" src="https://github.com/user-attachments/assets/580ad9a7-73fc-461b-8040-bab7d7882d85" />
+<img width="1413" height="1015" alt="image" src="https://github.com/user-attachments/assets/4c790336-27f9-4307-bc01-f75ea2b1c081" />
+
 
 ### Stopwatch
-<img width="1917" height="1010" alt="Stopwatch Preview" src="https://github.com/user-attachments/assets/a63f8f62-4231-4f3a-9720-9d977426c7cb" />
+<img width="1408" height="1011" alt="image" src="https://github.com/user-attachments/assets/5f46215e-8ac0-4b1b-88d1-d4bf195690d5" />
+
 
 > Background and celestial elements change automatically based on your local system time — no configuration required.
 
